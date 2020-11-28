@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 20
-  productGUID: 00000000000000000000000000000000
+  productGUID: 3b7f49efe21cd6340b30460471650386
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -642,10 +642,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 87b85ef1-9f14-485d-8ada-8c69b5cd1f04
   framebufferDepthMemorylessMode: 0
-  projectName: Udemy_Unity_Course_2
-  organizationId: 
+  projectName: The Great Fleece
+  organizationId: clydecarey
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
