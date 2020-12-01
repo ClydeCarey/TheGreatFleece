@@ -24440,6 +24440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1235034515}
+  - component: {fileID: 1235034516}
   m_Layer: 0
   m_Name: Sleeping_Guard_Cutscene
   m_TagString: Untagged
@@ -24463,6 +24464,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &1235034516
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235034514}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: c49631e154feb6543a9cf522edfdeec3, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -6578575773661926408, guid: c49631e154feb6543a9cf522edfdeec3, type: 2}
+    value: {fileID: 2043896032}
+  m_ExposedReferences:
+    m_References:
+    - a9622a1944c2bc44687cbb7708e7d777: {fileID: 1980280668}
+    - f23d9ef519086a24abb14c2300e92344: {fileID: 1980280668}
+    - 001b8ffb2bbdd0945b3165e0d16aa6d5: {fileID: 49324235}
+    - 480aeb78c5aa640478fa6992a85ab612: {fileID: 49324235}
 --- !u!1001 &1237228087
 PrefabInstance:
   m_ObjectHideFlags: 0
