@@ -10597,8 +10597,12 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 641430588658289712, guid: 23489b5082b161d418a0126910ee595f, type: 2}
     value: {fileID: 1967615294}
+  - key: {fileID: 6106816655533465682, guid: 23489b5082b161d418a0126910ee595f, type: 2}
+    value: {fileID: 2043896032}
   m_ExposedReferences:
-    m_References: []
+    m_References:
+    - a4e8910ad493c0a48bfe7c3a6e97a6b5: {fileID: 1048014680}
+    - 0de06fe1e05edc9408c439ad4e7c4550: {fileID: 820136393}
 --- !u!1001 &387991690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12180,6 +12184,7 @@ Transform:
   m_Children:
   - {fileID: 820136392}
   - {fileID: 1048014679}
+  - {fileID: 1826843301}
   m_Father: {fileID: 386735008}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12657,14 +12662,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 512824886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 418e42c7d0405cc48a7b83f63ea53bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FollowOffset: {x: 0, y: 0, z: -10}
-  m_XDamping: 1
-  m_YDamping: 1
+  m_Path: {fileID: 1826843302}
+  m_PathPosition: 0
+  m_PathOffset: {x: 0, y: 0, z: 0}
+  m_XDamping: 0
+  m_YDamping: 0
   m_ZDamping: 1
-  m_BindingMode: 1
+  m_CameraUp: 0
+  m_AutoDolly:
+    m_Enabled: 0
+    m_SearchRadius: 2
+    m_StepsPerSegment: 5
 --- !u!114 &512824889
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -18472,6 +18483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 820136392}
   - component: {fileID: 820136393}
+  - component: {fileID: 820136394}
   m_Layer: 0
   m_Name: CM Overhead Shot
   m_TagString: Untagged
@@ -18520,6 +18532,25 @@ MonoBehaviour:
     FarClipPlane: 5000
     Dutch: 0
   m_ComponentOwner: {fileID: 863856061}
+--- !u!95 &820136394
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820136391}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &820203500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21909,6 +21940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1048014679}
   - component: {fileID: 1048014680}
+  - component: {fileID: 1048014681}
   m_Layer: 0
   m_Name: CM Fullshot
   m_TagString: Untagged
@@ -21924,13 +21956,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048014678}
   m_LocalRotation: {x: -0, y: -0.19492595, z: -0, w: 0.980818}
-  m_LocalPosition: {x: 8.14, y: 4.38, z: -101.89}
+  m_LocalPosition: {x: -5.79, y: -0.87, z: -86.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 512824887}
   m_Father: {fileID: 483767852}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -22.481, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: -0.0001673955, z: 0.0000001584182}
 --- !u!114 &1048014680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21957,6 +21989,25 @@ MonoBehaviour:
     FarClipPlane: 5000
     Dutch: 0
   m_ComponentOwner: {fileID: 512824887}
+--- !u!95 &1048014681
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048014678}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1053681496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32284,6 +32335,63 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1812492850}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1826843300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1826843301}
+  - component: {fileID: 1826843302}
+  m_Layer: 0
+  m_Name: Dolly Track
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1826843301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826843300}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.79, y: -0.87, z: -87.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 483767852}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1826843302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826843300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37e5385efd7064cb1d54c94960acae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Appearance:
+    pathColor: {r: 0, g: 1, b: 0, a: 1}
+    inactivePathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    handleColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    width: 0.2
+    steps: 20
+  m_Looped: 0
+  m_Waypoints:
+  - position: {x: 0, y: 0, z: 1}
+    tangent: {x: 1, y: 0, z: 0}
+    roll: 0
+  - position: {x: 11.659126, y: 0, z: 2.7652588}
+    tangent: {x: 4.1462603, y: 0, z: 7.908676}
+    roll: 0
 --- !u!1 &1829785737
 GameObject:
   m_ObjectHideFlags: 0
@@ -41078,7 +41186,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043896029}
-  m_LocalRotation: {x: 0.46260753, y: -0.46488723, z: 0.32656592, w: 0.68060917}
+  m_LocalRotation: {x: 0.46260753, y: -0.46488723, z: 0.32656592, w: 0.95907193}
   m_LocalPosition: {x: 7.2, y: 23.24, z: -82.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
