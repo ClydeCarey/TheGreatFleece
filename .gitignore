@@ -66,3 +66,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+*.exr
+Assets/The Great Fleece/Game/_Scenes/Main/LightingData.asset
