@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
+  m_Parent: {fileID: 1556752036831205541}
   m_Children: []
   m_Clips: []
   m_Markers:
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
+  m_Parent: {fileID: 1556752036831205541}
   m_Children: []
   m_Clips: []
   m_Markers:
@@ -538,11 +538,9 @@ MonoBehaviour:
   m_Tracks:
   - {fileID: 641430588658289712}
   - {fileID: 6106816655533465682}
-  - {fileID: -3575590133644772774}
-  - {fileID: -5416236990629924080}
-  - {fileID: 2646868788731312583}
   - {fileID: 8892928535490137160}
   - {fileID: -2119714802111921013}
+  - {fileID: 1556752036831205541}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
@@ -688,6 +686,32 @@ MonoBehaviour:
   VirtualCamera:
     exposedName: 0de06fe1e05edc9408c439ad4e7c4550
     defaultValue: {fileID: 0}
+--- !u!114 &1556752036831205541
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fc6f5187a81dc47999eefade6f0935, type: 3}
+  m_Name: Virtual Cameras
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children:
+  - {fileID: -3575590133644772774}
+  - {fileID: -5416236990629924080}
+  - {fileID: 2646868788731312583}
+  m_Clips: []
+  m_Markers:
+    m_Objects: []
 --- !u!114 &2646868788731312583
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -706,7 +730,7 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
+  m_Parent: {fileID: 1556752036831205541}
   m_Children: []
   m_Clips: []
   m_Markers:
@@ -832,25 +856,7 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
