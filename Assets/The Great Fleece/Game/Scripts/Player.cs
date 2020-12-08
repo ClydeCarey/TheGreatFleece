@@ -28,14 +28,10 @@ public class Player : MonoBehaviour
 
             if (Physics.Raycast(rayOrigin, out hitInfo))
             {
-                Debug.Log("Hit: " + hitInfo.point);
-                //handle.destination = hitinfo position
-                //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                //cube.transform.position = hitInfo.point;
+               // Debug.Log("Hit: " + hitInfo.point);
+                _agent.SetDestination(hitInfo.point);
             }
         }
-        //cast a ray from mouse position
-        //debug floor position hit
-        //create object at floor position
+        
     }
 }
