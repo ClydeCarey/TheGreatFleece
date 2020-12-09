@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GuardAI : MonoBehaviour
 {
-    
+
+    public List<Transform> wayPoints;
     void Start()
     {
         
