@@ -5,16 +5,13 @@ using UnityEngine.AI;
 
 public class GuardAI : MonoBehaviour
 {
-<<<<<<< Updated upstream
     
-=======
 
     public List<Transform> wayPoints;
 
     public Transform currentTarget;
 
     private NavMeshAgent _agent;
->>>>>>> Stashed changes
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
