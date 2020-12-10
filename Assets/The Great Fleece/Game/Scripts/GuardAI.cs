@@ -41,6 +41,11 @@ public class GuardAI : MonoBehaviour
                     if (_reverse == true)
                     {
                         _currentTarget--;
+                        if (_currentTarget <= 0)
+                        {
+                            _reverse = false;
+                            _currentTarget = 0;
+                        }
                     }
                     else
                     {
@@ -81,7 +86,7 @@ public class GuardAI : MonoBehaviour
         else if (_reverse == false)
         {
             _currentTarget++;
-            Debug.Log("ienum reverse true target++");
+            Debug.Log("ienum reverse false target++");
             if (_currentTarget == wayPoints.Count)
             {
                 _reverse = true;
