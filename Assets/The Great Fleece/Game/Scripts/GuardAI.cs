@@ -4,19 +4,21 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class GuardAI : MonoBehaviour
-{   
+{
 
-    public List<Transform> wayPoints;    
+    public List<Transform> wayPoints;
     private NavMeshAgent _agent;
     [SerializeField]
     private int _currentTarget;
     private bool _reverse = false;
     private bool _targetReached;
+    private Animator _anim;
 
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
-                
+        _anim = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -25,12 +27,33 @@ public class GuardAI : MonoBehaviour
         if (wayPoints.Count > 0 && wayPoints[_currentTarget] != null)
         {
             _agent.SetDestination(wayPoints[_currentTarget].position);
-                        
+
             float distance = Vector3.Distance(transform.position, wayPoints[_currentTarget].position);
+
+            if (distance < 1 && (_currentTarget == 0 || _currentTarget == wayPoints.Count - 1))
+            {
+                if (_anim != null)
+                {
+                    _anim.SetBool("Walk", false);
+                }
+
+            }
+            else
+            {
+                if (_anim != null)
+                {
+                    _anim.SetBool("Walk", true);
+                }
+            }
 
             if (distance < 1.0f && _targetReached == false)
             {
-                if ((_currentTarget == 0 || _currentTarget == wayPoints.Count - 1))
+                if (wayPoints.Count <2)
+                {
+                    return;
+                }
+
+                if ((_currentTarget == 0 || _currentTarget == wayPoints.Count - 1) && wayPoints.Count > 1)
                 {
                     _targetReached = true;
                     //Debug.Log("target reached" + _targetReached);
@@ -38,6 +61,7 @@ public class GuardAI : MonoBehaviour
                 }
                 else
                 {
+
                     if (_reverse == true)
                     {
                         _currentTarget--;
@@ -50,11 +74,13 @@ public class GuardAI : MonoBehaviour
                     else
                     {
                         _currentTarget++;
+
                     }
+
                 }
 
             }
-            
+
         }
     }
 
@@ -64,18 +90,20 @@ public class GuardAI : MonoBehaviour
 
         if (_currentTarget == 0)
         {
+            _anim.SetBool("Walk", false);
             yield return new WaitForSeconds(2.0f);    //(Random.Range(2.0f, 5.0f));
         }
         else if (_currentTarget == wayPoints.Count - 1)
         {
+            _anim.SetBool("Walk", false);
             yield return new WaitForSeconds(2.0f);   //(Random.Range(2.0f, 5.0f));
         }
-                     
+
 
         if (_reverse == true)
         {
             _currentTarget--;
-            Debug.Log("ienum reverse true target--");
+            //Debug.Log("ienum reverse true target--");
             if (_currentTarget == 0)
             {
                 _reverse = false;
@@ -86,12 +114,12 @@ public class GuardAI : MonoBehaviour
         else if (_reverse == false)
         {
             _currentTarget++;
-            Debug.Log("ienum reverse false target++");
+            //Debug.Log("ienum reverse false target++");
             if (_currentTarget == wayPoints.Count)
             {
                 _reverse = true;
                 _currentTarget--;
-                Debug.Log("ienum reverse false targetwaypoints count target--");
+                //Debug.Log("ienum reverse false targetwaypoints count target--");
             }
 
         }

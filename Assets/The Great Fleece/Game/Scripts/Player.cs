@@ -29,12 +29,13 @@ public class Player : MonoBehaviour
         {
             Ray rayOrigin = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
-
+            //Debug.DrawRay(transform.position, r , Color.green);
             if (Physics.Raycast(rayOrigin, out hitInfo))
-            {
-                // Debug.Log("Hit: " + hitInfo.point);
-                _agent.SetDestination(hitInfo.point);
 
+            {
+                
+                _agent.SetDestination(hitInfo.point);
+                Debug.Log(hitInfo.point);
                 _anim.SetBool("Walk", true);
                 _target = hitInfo.point;
 
@@ -42,8 +43,10 @@ public class Player : MonoBehaviour
         }
 
         float distance = Vector3.Distance(transform.position, _target);
-        if (distance < 1.0f)
+        Debug.Log(distance);
+        if (distance < 2.0f)
         {
+            Debug.Log("walk set to false");
             _anim.SetBool("Walk", false);
         }
 
