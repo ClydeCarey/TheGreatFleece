@@ -5,14 +5,13 @@ using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
-    //create a variable to hold our navmesh agent
-    //handle to navmesh agent
-    private NavMeshAgent _agent;
+    public GameObject coinPrefab;
+    public AudioClip coinSoundEffect;
 
-    //get handle to animator
+    private NavMeshAgent _agent;
     private Animator _anim;
     private Vector3 _target;
-
+    private bool _coinTossed;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +34,7 @@ public class Player : MonoBehaviour
             {
                 
                 _agent.SetDestination(hitInfo.point);
-                Debug.Log(hitInfo.point);
+                //Debug.Log(hitInfo.point);
                 _anim.SetBool("Walk", true);
                 _target = hitInfo.point;
 
@@ -46,9 +45,42 @@ public class Player : MonoBehaviour
         Debug.Log(distance);
         if (distance < 2.0f)
         {
-            Debug.Log("walk set to false");
+            //Debug.Log("walk set to false");
             _anim.SetBool("Walk", false);
         }
+        //if right click
+        if (Input.GetMouseButtonDown(1) && _coinTossed == false)
+        {
+            Ray rayOrigin = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitInfo;
 
+            if (Physics.Raycast(rayOrigin, out hitInfo))
+            {
+                _coinTossed = true;
+                Instantiate(coinPrefab, hitInfo.point, Quaternion.identity);
+                AudioSource.PlayClipAtPoint(coinSoundEffect, transform.position);
+                SendAIToCoinSpot(hitInfo.point);
+            }            
+        }
+        //instantiate coin at clicked position
+        //play sound of the coin hitting
+    }
+
+    void SendAIToCoinSpot(Vector3 coinPos)
+    {
+        GameObject[] guards = GameObject.FindGameObjectsWithTag("Guard1");
+        foreach(var guard in guards)
+        {
+            NavMeshAgent currentAgent = guard.GetComponent<NavMeshAgent>();
+            GuardAI currentGuard = guard.GetComponent<GuardAI>();
+            Animator currentAnim = guard.GetComponent<Animator>();
+
+            currentGuard.coinTossed = true;
+            currentAgent.SetDestination(coinPos);
+            currentAnim.SetBool("Walk", true);
+            currentGuard.coinPos = coinPos;
+        }
+        //move guards to hitinfo point
+        //navmeshagent.setdestination = coinPos
     }
 }

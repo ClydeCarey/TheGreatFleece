@@ -7,6 +7,9 @@ public class GuardAI : MonoBehaviour
 {
 
     public List<Transform> wayPoints;
+    public bool coinTossed;
+    public Vector3 coinPos;
+
     private NavMeshAgent _agent;
     [SerializeField]
     private int _currentTarget;
@@ -24,7 +27,7 @@ public class GuardAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (wayPoints.Count > 0 && wayPoints[_currentTarget] != null)
+        if (wayPoints.Count > 0 && wayPoints[_currentTarget] != null && coinTossed == false)
         {
             _agent.SetDestination(wayPoints[_currentTarget].position);
 
@@ -82,6 +85,16 @@ public class GuardAI : MonoBehaviour
             }
 
         }
+        else
+        {
+            float distance = Vector3.Distance(transform.position, coinPos);
+
+            if (distance < 4.0f)
+            {
+                _anim.SetBool("Walk", false);
+            }
+        }
+     
     }
 
     IEnumerator WaitBeforeMoving()
