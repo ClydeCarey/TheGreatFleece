@@ -56,7 +56,9 @@ public class Player : MonoBehaviour
 
             if (Physics.Raycast(rayOrigin, out hitInfo))
             {
+                _anim.SetTrigger("Throw");
                 _coinTossed = true;
+                //WaitForSeconds(1); later make a coroutine to have a time between the throw and the coin sound
                 Instantiate(coinPrefab, hitInfo.point, Quaternion.identity);
                 AudioSource.PlayClipAtPoint(coinSoundEffect, transform.position);
                 SendAIToCoinSpot(hitInfo.point);
