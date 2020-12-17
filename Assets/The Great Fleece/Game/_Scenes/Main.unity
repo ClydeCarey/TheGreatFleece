@@ -11252,7 +11252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &324523413
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19760,6 +19760,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712738620}
   m_Mesh: {fileID: 4300016, guid: 01200cf17e5db4bec9513caf06cca731, type: 3}
+--- !u!1 &714482579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1081429830781228, guid: 6c4f6fe08bd85514fa49752d89055191,
+    type: 3}
+  m_PrefabInstance: {fileID: 1571735346}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &715879447
 GameObject:
   m_ObjectHideFlags: 0
@@ -37080,6 +37086,10 @@ PlayableDirector:
     value: {fileID: 524911137}
   - key: {fileID: -8390680100127715045, guid: 64314bda5c63e1448aac86f3d8ee7c4e, type: 2}
     value: {fileID: 1543944897}
+  - key: {fileID: 1743532908307100850, guid: 64314bda5c63e1448aac86f3d8ee7c4e, type: 2}
+    value: {fileID: 714482579}
+  - key: {fileID: -4128976583753071675, guid: 64314bda5c63e1448aac86f3d8ee7c4e, type: 2}
+    value: {fileID: 973957238}
   m_ExposedReferences:
     m_References:
     - cabd5187c80fac04a8a3a8f2724e9506: {fileID: 889051035}
